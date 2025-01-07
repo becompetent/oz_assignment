@@ -1,0 +1,195 @@
+원격브랜치 관리내역 push하지 못해 실습기록을 아래에 남김
+yellowpop@gimnamiui-MacBookPro oz_assignment % git branch from-local
+yellowpop@gimnamiui-MacBookPro oz_assignment % git branch
+  from-local
+* main
+yellowpop@gimnamiui-MacBookPro oz_assignment % git switch
+fatal: missing branch or commit argument
+yellowpop@gimnamiui-MacBookPro oz_assignment % git switch from-local
+'from-local' 브랜치로 전환합니다
+yellowpop@gimnamiui-MacBookPro oz_assignment % git push
+fatal: The current branch from-local has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin from-local
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+yellowpop@gimnamiui-MacBookPro oz_assignment % git push --set-upstream origin from-local
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: 
+remote: Create a pull request for 'from-local' on GitHub by visiting:
+remote:      https://github.com/becompetent/oz_assignment/pull/new/from-local
+remote: 
+To https://github.com/becompetent/oz_assignment.git
+ * [new branch]      from-local -> from-local
+branch 'from-local' set up to track 'origin/from-local'.
+yellowpop@gimnamiui-MacBookPro oz_assignment % git branch
+* from-local
+  main
+yellowpop@gimnamiui-MacBookPro oz_assignment % git branch -a
+* from-local
+  main
+  remotes/origin/HEAD -> origin/main
+  remotes/origin/add-coach
+  remotes/origin/from-local
+  remotes/origin/main
+  remotes/origin/new-teams
+yellowpop@gimnamiui-MacBookPro oz_assignment % git branch -a
+* from-local
+  main
+  remotes/origin/HEAD -> origin/main
+  remotes/origin/add-coach
+  remotes/origin/from-local
+  remotes/origin/main
+  remotes/origin/new-teams
+yellowpop@gimnamiui-MacBookPro oz_assignment % git switch main
+'main' 브랜치로 전환합니다
+브랜치가 'origin/main'에 맞게 업데이트된 상태입니다.
+yellowpop@gimnamiui-MacBookPro oz_assignment % git branch -a
+  from-local
+* main
+  remotes/origin/HEAD -> origin/main
+  remotes/origin/add-coach
+  remotes/origin/from-local
+  remotes/origin/main
+  remotes/origin/new-teams
+yellowpop@gimnamiui-MacBookPro oz_assignment % git fetch
+https://github.com/becompetent/oz_assignment URL에서
+ * [새로운 브랜치]   from-remote -> origin/from-remote
+yellowpop@gimnamiui-MacBookPro oz_assignment % git branch -a  
+  from-local
+* main
+  remotes/origin/HEAD -> origin/main
+  remotes/origin/add-coach
+  remotes/origin/from-local
+  remotes/origin/from-remote
+  remotes/origin/main
+  remotes/origin/new-teams
+yellowpop@gimnamiui-MacBookPro oz_assignment % git switch -t origin/from-remote
+branch 'from-remote' set up to track 'origin/from-remote'.
+새로 만든 'from-remote' 브랜치로 전환합니다
+yellowpop@gimnamiui-MacBookPro oz_assignment % git branch
+  from-local
+* from-remote
+  main
+yellowpop@gimnamiui-MacBookPro oz_assignment % git branch -D from-local
+from-local 브랜치 삭제 (과거 06447d1).
+yellowpop@gimnamiui-MacBookPro oz_assignment % git push origin --delete from-local
+To https://github.com/becompetent/oz_assignment.git
+ - [deleted]         from-local
+yellowpop@gimnamiui-MacBookPro oz_assignment % git push origin --delete from-remote
+To https://github.com/becompetent/oz_assignment.git
+ - [deleted]         from-remote
+yellowpop@gimnamiui-MacBookPro oz_assignment % git add .
+yellowpop@gimnamiui-MacBookPro oz_assignment % git status
+현재 브랜치 from-remote
+현재 브랜치가 'origin/from-remote' 기반이지만, 업스트림이 없어졌습니다.
+  (바로잡으려면 "git branch --unset-upstream"을 사용하십시오)
+
+커밋할 변경 사항:
+  (use "git restore --staged <file>..." to unstage)
+        새 파일:       GIT/day08(tag)/oz_git_tag.yaml
+        새 파일:       "GIT/day09(branch\352\264\200\353\246\254)/oz_back.yaml"
+        새 파일:       "GIT/day09(branch\352\264\200\353\246\254)/oz_cs.yaml"
+        새 파일:       "GIT/day09(branch\352\264\200\353\246\254)/oz_fullstack.yaml"
+        새 파일:       "GIT/day09(branch\352\264\200\353\246\254)/oz_market.yaml"
+        새 파일:       "GIT/day09(branch\352\264\200\353\246\254)/oz_service.yaml"
+
+yellowpop@gimnamiui-MacBookPro oz_assignment % git commit -m "원격브랜치 관리하기 실습"
+[from-remote 03fc7f0] 원격브랜치 관리하기 실습
+ 6 files changed, 52 insertions(+)
+ create mode 100644 GIT/day08(tag)/oz_git_tag.yaml
+ create mode 100644 "GIT/day09(branch\352\264\200\353\246\254)/oz_back.yaml"
+ create mode 100644 "GIT/day09(branch\352\264\200\353\246\254)/oz_cs.yaml"
+ create mode 100644 "GIT/day09(branch\352\264\200\353\246\254)/oz_fullstack.yaml"
+ create mode 100644 "GIT/day09(branch\352\264\200\353\246\254)/oz_market.yaml"
+ create mode 100644 "GIT/day09(branch\352\264\200\353\246\254)/oz_service.yaml"
+yellowpop@gimnamiui-MacBookPro oz_assignment % git push
+오브젝트 나열하는 중: 8, 완료.
+오브젝트 개수 세는 중: 100% (8/8), 완료.
+Delta compression using up to 10 threads
+오브젝트 압축하는 중: 100% (4/4), 완료.
+오브젝트 쓰는 중: 100% (5/5), 509 bytes | 509.00 KiB/s, 완료.
+Total 5 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+remote: 
+remote: Create a pull request for 'from-remote' on GitHub by visiting:
+remote:      https://github.com/becompetent/oz_assignment/pull/new/from-remote
+remote: 
+To https://github.com/becompetent/oz_assignment.git
+ * [new branch]      from-remote -> from-remote
+yellowpop@gimnamiui-MacBookPro oz_assignment % git branch
+* from-remote
+  main
+yellowpop@gimnamiui-MacBookPro oz_assignment % git switch main
+'main' 브랜치로 전환합니다
+브랜치가 'origin/main'에 맞게 업데이트된 상태입니다.
+yellowpop@gimnamiui-MacBookPro oz_assignment % git branch -D from-remote
+from-remote 브랜치 삭제 (과거 03fc7f0).
+yellowpop@gimnamiui-MacBookPro oz_assignment % git branch -a
+* main
+  remotes/origin/HEAD -> origin/main
+  remotes/origin/add-coach
+  remotes/origin/from-remote
+  remotes/origin/main
+  remotes/origin/new-teams
+yellowpop@gimnamiui-MacBookPro oz_assignment % git push origin --delete from-remote
+To https://github.com/becompetent/oz_assignment.git
+ - [deleted]         from-remote
+yellowpop@gimnamiui-MacBookPro oz_assignment % git branch -a
+* main
+  remotes/origin/HEAD -> origin/main
+  remotes/origin/add-coach
+  remotes/origin/main
+  remotes/origin/new-teams
+yellowpop@gimnamiui-MacBookPro oz_assignment % git commit -m "원격브랜치 삭제완료" 
+현재 브랜치 main
+브랜치가 'origin/main'에 맞게 업데이트된 상태입니다.
+
+커밋할 사항 없음, 작업 폴더 깨끗함
+yellowpop@gimnamiui-MacBookPro oz_assignment % git add .
+yellowpop@gimnamiui-MacBookPro oz_assignment % git commit -m "원격브랜치 삭제완료"
+현재 브랜치 main
+브랜치가 'origin/main'에 맞게 업데이트된 상태입니다.
+
+커밋할 사항 없음, 작업 폴더 깨끗함
+yellowpop@gimnamiui-MacBookPro oz_assignment % git push
+Everything up-to-date
+yellowpop@gimnamiui-MacBookPro oz_assignment % git status
+현재 브랜치 main
+브랜치가 'origin/main'에 맞게 업데이트된 상태입니다.
+
+커밋할 사항 없음, 작업 폴더 깨끗함
+yellowpop@gimnamiui-MacBookPro oz_assignment % git log --oneline
+06447d1 (HEAD -> main, origin/main, origin/HEAD) tag실습
+c1e1f4e (tag: v2.0.0, tag: v1.2.1, tag: show) fullstack 리더 나리 변경
+8f92b28fullstack 코치 루나 변경
+eb12daa fullstack 멤버 동호 추가
+dad7f25 fullstack 멤버 에릭 추가
+6ef3b7f 소스트리를_이용한_branch_합치기_실습
+e3f6543 cherry-pick_실습
+d0fb9a3 day03 폴더 파일 사용하여 충돌해결실습 진행
+8a49a29 service팀 변경
+239d767 fullstack팀 변경
+7a72970 Merge branch 'conflict-1'
+c66607e back팀 변경
+b925ec6 변경됨, fullstack, service
+52a11f2 rebase new-teams
+be9048e market팀 추가
+4b3f6f6 (tag: v1.0.0) cs팀 추가
+5c21a20 success
+bc131d4 (origin/add-coach) service팀의 코치 서진 추가
+57293ef fullstack팀의 코치 민혁 추가
+1c9e168 back팀의 코치 성민 추가
+4677491 서비스팀 멤버 지수 추가
+10a24c5 풀스택팀 멤버 영철 추가
+01fe433 test
+29c774e Merge commit '01a58b308f9cf5b729463604f72f5a4844b052f1'
+01a58b3 풀스택팀 멤버 영철 추가
+667940e 풀스택팀 멤퍼 영철 추가
+b34fd57 Revert "리더변경, 프론트 삭제, 풀스텍 추가"
+3f22ec0 ai팀을 서비스팀으로 변경
+b0ae601 AI부서 추가
+586b19a back에 멤버 가연 추가
