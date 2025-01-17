@@ -1,0 +1,13 @@
+-- CREATE DATABASE testdatabse;
+-- USE testdatabase;
+-- USE mysql;
+-- select * from user;
+-- CREATE USER 'username'@'localhost' IDENTIFIED BY 'user-password';
+
+-- CREATE TABLE users(
+-- id INT AUTO_INCREMENT PRIMARY KEY,
+-- username VARCHAR(30) NOT NULL,
+-- email VARCHAR(100) UNIQUE,
+-- is_business VARCHAR(10) DEFAULT False,
+-- age INT CHECK (age >= 10)
+-- );

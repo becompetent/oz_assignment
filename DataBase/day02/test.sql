@@ -1,0 +1,12 @@
+-- CREATE DATABASE mydatabase; --mydatabase 라는 이름을 가진 데이터베이스를 생성
+-- SHOW DATABASES; -- 모든 데이터베이스 목록조회
+-- USE mydatabase; -- mydatabase 데이터베이스 사용
+-- DROP DATABASE IF EXISTS mydatabase;
+-- USE mysql;
+-- SELECT * FROM user;
+-- CREATE USER 'username'@'localhost' IDENTIFIED BY 'oz-password';
+-- SET PASSWORD FOR 'username'@'localhost' = 'oz-fullstack';
+-- SHOW GRANTS FOR 'username'@'localhost';
+-- SHOW GRANTS;
+-- DROP USER 'username'@'localhost';
+

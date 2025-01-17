@@ -1,0 +1,7 @@
+-- USE mysql;
+-- CREATE USER 'oz_assignment'@'localhost' IDENTIFIED BY 'skatod1318'
+-- SELECT * FROM user;
+-- GRANT ALL PRIVILEGES ON *.* TO 'assignment'@'localhost'; 
+-- FLUSH PRIVILEGES;
+-- SHOW GRANTS FOR 'oz_assignment'@'localhost';
+-- SHOW GRANTS;
