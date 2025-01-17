@@ -42,7 +42,7 @@
 --    -> );
 
 --6) daily_sales 테이블 생성
-CREATE TABLE daily_sales (
+--CREATE TABLE daily_sales (
 --    -> daily_sales_id INT,
 --    -> sale_id INT,
 --    -> daily_sales DATE PRIMARY KEY,
