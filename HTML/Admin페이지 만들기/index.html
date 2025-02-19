@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>홈페이지</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .cover-container {
+            max-width: 42em;
+        }
+        .theme-widget {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #7952b3;
+            color: white;
+            border: 2px solid white;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 1000;
+        }
+        body[data-bs-theme="light"] {
+            background-color: #f8f9fa !important;
+            color: #212529 !important;
+        }
+        body[data-bs-theme="light"] header, 
+        body[data-bs-theme="light"] .nav-link, 
+        body[data-bs-theme="light"] .dropdown-menu {
+            background-color: #ffffff !important;
+            color: #212529 !important;
+        }
+        body[data-bs-theme="light"] .nav-link:hover {
+            background-color: #e9ecef !important;
+        }
+        /* 기본 nav-link 스타일을 설정 */
+    
+
+    </style>
+</head>
+<body class="d-flex h-100 text-center text-bg-dark">
+    <div class="container d-flex w-100 h-100 p-3 mx-auto flex-column">
+        <header class="d-flex flex-wrap align-items-center justify-content-between py-3 mb-4 border-bottom">
+            <a href="index.html" class="d-flex align-items-center mb-3 mb-md-0 text-light text-decoration-none">
+                <img src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo.svg" alt="Bootstrap Logo" width="40" height="32" class="me-2">
+                <span class="fs-4">Style Tod</span>
+            </a>
+            <ul class="nav nav">
+                <li class="nav-item"><a href="index.html" class="nav-link active" aria-current="page">Home</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="categoryDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">카테고리</a>
+                    <ul class="dropdown-menu" aria-labelledby="categoryDropdown">
+                        <li><a class="dropdown-item" href="#">상의</a></li>
+                        <li><a class="dropdown-item" href="#">하의</a></li>
+                        <li><a class="dropdown-item" href="#">슈즈</a></li>
+                        <li><a class="dropdown-item" href="#">잡화</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="#login" class="nav-link">로그인</a></li>
+                <li class="nav-item"><a href="#signup" class="nav-link">회원가입</a></li>
+            </ul>
+        </header>
+        
+        <main class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <h1 class="mb-3">Welcome to Style Tod</h1><br>
+            <p class="lead">2025년 팬톤컬러가 궁금하다면? 지금바로 클릭!</p>
+            <p class="lead">
+                <a href="Admin페이지.html" class="btn btn-lg btn-light fw-bold border-white bg-white">클릭!</a>
+            </p>
+        </main>
+    </div>
+    
+    <button id="themeToggle" class="theme-widget">🌙</button>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        themeToggle.addEventListener('click', () => {
+            const htmlElement = document.documentElement;
+            if (htmlElement.getAttribute('data-bs-theme') === 'dark') {
+                htmlElement.setAttribute('data-bs-theme', 'light');
+                document.body.classList.remove('text-bg-dark');
+                document.body.classList.add('text-bg-light');
+                themeToggle.textContent = '🌞';
+            } else {
+                htmlElement.setAttribute('data-bs-theme', 'dark');
+                document.body.classList.remove('text-bg-light');
+                document.body.classList.add('text-bg-dark');
+                themeToggle.textContent = '🌙';
+            }
+        });
+    </script>
+</body>
+</html>

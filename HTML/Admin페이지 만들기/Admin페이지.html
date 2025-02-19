@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <title>Admin Page</title>
+  <style>
+    .cover-container {
+        max-width: 42em;
+    }
+    .theme-widget {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: #7952b3;
+        color: white;
+        border: 2px solid white;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        cursor: pointer;
+        z-index: 1000;
+    }
+    body[data-bs-theme="light"] {
+        background-color: #f8f9fa !important;
+        color: #212529 !important;
+    }
+    body[data-bs-theme="Dark"] {
+        background-color: #212529 !important;
+        color: #f8f9fa !important;
+    }
+    body[data-bs-theme="light"] header, 
+    body[data-bs-theme="light"] .nav-link, 
+    body[data-bs-theme="light"] .dropdown-menu {
+        background-color: #ffffff !important;
+        color: #212529 !important;
+    }
+    body[data-bs-theme="Dark"] header, 
+    body[data-bs-theme="Dark"] .nav-link, 
+    body[data-bs-theme="Dark"] .dropdown-menu {
+        background-color: #212529 !important;
+        color: #ffffff !important;
+    }
+    body[data-bs-theme="light"] .nav-link:hover {
+        background-color: #e9ecef !important;
+    }
+    body[data-bs-theme="Dark"] .nav-link:hover {
+        background-color: #212529 !important;
+    }
+</style>
+</head>
+<body>
+  <div class="container">
+    <header class="d-flex flex-wrap align-items-center justify-content-between py-3 mb-4 border-bottom">
+        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 text-dark text-decoration-none">
+            <img src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo.svg" alt="Bootstrap Logo" width="40" height="32" class="me-2">
+            <span class="fs-4">Style Tod</span>
+        </a>
+        <ul class="nav nav">
+            <li class="nav-item"><a href="index.html" class="nav-link active" aria-current="page">Home</a></li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="categoryDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">카테고리</a>
+                <ul class="dropdown-menu" aria-labelledby="categoryDropdown">
+                    <li><a class="dropdown-item" href="#">상의</a></li>
+                    <li><a class="dropdown-item" href="#">하의</a></li>
+                    <li><a class="dropdown-item" href="#">슈즈</a></li>
+                    <li><a class="dropdown-item" href="#">잡화</a></li>
+                </ul>
+            </li>
+            <li class="nav-item"><a href="#login" class="nav-link">로그인</a></li>
+            <li class="nav-item"><a href="#signup" class="nav-link">회원가입</a></li>
+            <button id="themeToggle" class="theme-widget">🌙</button>
+    
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+            <script>
+                const themeToggle = document.getElementById('themeToggle');
+                themeToggle.addEventListener('click', () => {
+                    const htmlElement = document.documentElement;
+                    if (htmlElement.getAttribute('data-bs-theme') === 'dark') {
+                        htmlElement.setAttribute('data-bs-theme', 'light');
+                        document.body.classList.remove('text-bg-dark');
+                        document.body.classList.add('text-bg-light');
+                        themeToggle.textContent = '🌞';
+                    } else {
+                        htmlElement.setAttribute('data-bs-theme', 'dark');
+                        document.body.classList.remove('text-bg-light');
+                        document.body.classList.add('text-bg-dark');
+                        themeToggle.textContent = '🌙';
+                    }
+                });
+            </script>
+        </ul>
+    </header>
+ </div>
+ 
+
+          </li>
+          </ul>
+       </div>
+      </div>
+    </div>
+  
+
+
+  <div class="container mt-3">
+    <h3 class="mt-5 mb-3">신규 등록 상품</h3>
+    <form class="row row-cols-lg-auto g-3 align-items-center">      
+      <div class="col-12">
+        <label class="visually-hidden" for="inlineFormSelectPref">Preference</label>
+        <select class="form-select" id="inlineFormSelectPref" name="category_data_table">
+          <!-- 셀렉트요소의 name="category_data_table"은 지우거나 변경하면 안돼요 -->
+          <option value="">카테고리</option>
+          <option value="상의">상의</option>
+          <option value="하의">하의</option>
+          <option value="슈즈">슈즈</option>
+          <option value="잡화">잡화</option>
+          <!-- 카테고리 셀렉트 코드를 넣어주세요 -->  
+        </select>
+      </div>
+      <div class="col-3">
+        <!-- input 입력창 코드를 넣어주세요 -->
+        <input type="text" class="form-control" placeholder="제품명을 입력해주세요" aria-label="제품명을 입력해주세요" aria-describedby="btnGroupAddon">     
+      </div>
+                   
+      <div>
+          <a href="#" class="btn btn-warning" role="button" data-bs-toggle="button">검색</a>
+      </div>
+            
+    </form>
+
+    <div class="container mt-3">
+      <table class="table table-sm">
+        <thead>
+          <!-- 열의 속성값을 나타내는 코드를 작성해주세요 (예 : 카테고리, 브랜드, 상품명, 가격) -->
+          <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">카테고리</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">브랜드</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">상품명</a>
+            </li>
+           
+          </ul>
+        </thead>
+        <tbody id="product_data_Table">
+          <!-- tbody요소의 id="product_data_Table" 는 지우거나 변경하면 안돼요! -->
+            
+          <!-- 제품 데이터가 여기 추가됩니다. -->
+        </tbody>
+      </table>
+    </div>
+
+    <div class="container text-center">
+      <div class="row">
+        <div class="col-3">
+          <div class="card" style="width: 12rem;">
+            <img src="https://search.pstatic.net/common/?src=https%3A%2F%2Fshop-phinf.pstatic.net%2F20250213_154%2F17394365242937sqBu_JPEG%2F65014831105645454_1605412481.jpg&type=sc960_832" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">양털 후드티</h3>
+              <p class="card-text">아직 추위 안갔다! </p>
+              <a href="#" class="btn btn-primary">상세보기</a>
+           </div>
+          </div>
+        </div>
+
+        <div class="col-3">
+          <div class="card" style="width: 12rem;">
+            <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fshop1.phinf.naver.net%2F20211023_182%2F1634987093478Ymycs_JPEG%2F36122939164995645_1419321056.jpg&type=sc960_832" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">와이드 팬츠</h3>
+              <p class="card-text">휘뚜루 마뚜루</p>
+              <a href="#" class="btn btn-primary">상세보기</a>
+           </div>
+          </div>
+        </div>
+
+        <div class="col-3">
+          <div class="card" style="width: 13rem;">
+            <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fshop1.phinf.naver.net%2F20250218_236%2F1739851004075VVNpb_JPEG%2F15815678043388731_1385249666.jpg&type=sc960_832" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">봄물씬 운동화</h3>
+              <p class="card-text">나이* 에어*스 </p>
+              <a href="#" class="btn btn-primary">상세보기</a>
+           </div>
+          </div>
+        </div>
+
+        <div class="col-3">
+          <div class="card" style="width: 10rem;">
+            <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDAxMjRfMTQ2%2FMDAxNzA2MDM2NDQyMjU5.bypAxJifsKAbQv2mtLBeEq1dXMIUTOowNLpIie8blecg.59xkDWvgwa67_iv7CRLbo40Eoy1Hlwzzwo3pVHDoiR4g.JPEG.ekdnjs110389%2FKakaoTalk_20240124_034738801_02.jpg&type=sc960_832" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">빵빵이 키링</h3>
+              <p class="card-text">빵빵이 레더 키링</p>
+              <a href="#" class="btn btn-primary">상세보기</a>
+           </div>
+          </div>
+        </div>
+    </div>
+    <hr>
+    <!-- 페이지 네이션 코드를 넣어주세요 -->
+    <div class="d-flex justify-content-center"> 
+      <nav aria-label="Page navigation ">
+        <ul class="pagination pagination-md">
+          <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item"><a class="page-link" href="#">Next</a></li>
+        </ul>
+      </nav>
+      
+  </div>
+
+  <script>
+    // 크롤링한 데이터를 아래와 같은 형태의 객체 배열로 가정합니다.
+    // 추후 데이터베이스에 있는 데이터를 쿼리문으로 불러 올 수 있게 쿼리를 작성해 볼 수 있음
+
+    // 제품 데이터
+    const product_data = [
+      { category: "상의", brand: '양털집', product: '양털 후드티', price: '100,000' },
+      { category: "하의", brand: '보세', product: '와이드 기모팬츠', price: '30,000' },
+      { category: "신발", brand: 'Nike', product: '에어포스 1', price: '137,000' },
+      { category: "패션잡화", brand: '네이무', product: '빵빵이 키링', price: '29,000' },
+      // ...
+    ];
+
+    // 제품 테이블에 데이터 추가
+    const product_data_Table = document.getElementById('product_data_Table');
+
+    // 초기 데이터 로딩
+    product_data.forEach((item) => {
+      const row = product_data_Table.insertRow();
+      row.insertCell(0).innerHTML = item.category;
+      row.insertCell(1).innerHTML = item.brand;
+      row.insertCell(2).innerHTML = item.product;
+      row.insertCell(3).innerHTML = item.price;
+    });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+
+ </body>
+ <span>&copy; 프로젝트 Admin</span>
+</html>

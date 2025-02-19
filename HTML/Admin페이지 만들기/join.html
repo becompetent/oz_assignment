@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>회원가입 폼</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1>회원 가입</h1>
+    <form id="form-container">
+      <fieldset>
+        <legend>기본 정보</legend>
+        <div class="input_container">
+          <label for="name">이름:</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            required
+            autocomplete="off"
+          />
+        </div>
+        <div class="input_container">
+          <label for="ssn_front">주민번호:</label>
+          <input
+            type="text"
+            id="ssn_front"
+            name="ssn"
+            required
+            autocomplete="off"
+          />
+          <span>-</span>
+          <input
+            type="password"
+            id="ssn_back"
+            name="ssn"
+            required
+            autocomplete="off"
+          />
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>가입 정보</legend>
+        <div class="input_container">
+          <label for="username">아이디:</label>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            required
+            autocomplete="off"
+          />
+        </div>
+        <div class="input_container">
+          <label for="password">비밀번호:</label>
+          <input type="password" id="password" name="password" required />
+        </div>
+        <div class="input_container">
+          <label for="password-retype">비밀번호 확인:</label>
+          <input
+            type="password"
+            id="password-retype"
+            name="password-retype"
+            required
+          />
+        </div>
+        <div class="input_container">
+          <label for="email">이메일:</label>
+          <input
+            type="text"
+            id="email"
+            name="email"
+            required
+            autocomplete="off"
+          />
+          <span>@</span>
+          <select name="mailbox" id="mailbox">
+            <option value="gmail.com">gmail.com</option>
+            <option value="kakao.com">kakao.com</option>
+            <option value="hanmail.com">hanmail.com</option>
+            <option value="naver.com">naver.com</option>
+          </select>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>기타 정보</legend>
+        <div class="input_container">
+          <label for="address">주소:</label>
+          <input
+            type="text"
+            id="address"
+            name="address"
+            required
+            autocomplete="off"
+          />
+        </div>
+        <div class="input_container">
+          <label>성별:</label>
+          <input type="radio" id="male" name="gender" value="male" />
+          <label for="male">남성</label>
+          <input type="radio" id="female" name="gender" value="female" />
+          <label for="female">여성</label>
+        </div>
+      </fieldset>
+      <div class="input_container">
+        <input type="checkbox" id="agree" name="agree" required />
+        <label for="agree">개인정보 동의</label>
+      </div>
+      <button type="submit">회원가입</button>
+    </form>
+    <script src="script.js"></script>
+  </body>
+</html>
