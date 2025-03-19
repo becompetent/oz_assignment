@@ -5,6 +5,17 @@
   <title>$Title$</title>
 </head>
 <body>
-$END$
+    <h1>{{ movie.title }}</h1>
+    <p>감독: {{ movie.director}}</p>
+{#for, if 로 일치하는 것만 표시해주는 코드 작성할 수 있지만#}
+{#루프 돌면서 무거워 질수 있어서 사용하지 않음, 사용시 코드는 아래 주석과 같다#}
+{#    {% for movie in movie_list %}#}
+{#        {% if forloop.counter0 == index %}#}
+{#        <h1>{{ movie.title }}</h1>#}
+{#            <p>감독: {{ movie.director }}</p>#}
+{#        {% endif %}#}
+
+    {% endfor %}
+
 </body>
 </html>

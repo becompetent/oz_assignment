@@ -5,6 +5,12 @@
   <title>$Title$</title>
 </head>
 <body>
-$END$
+    {% for movie in movie_list %}
+        {% if forloop.counter <= 3 %}
+            {{ forloop.counter }}위: <a href="/movie/{{ forloop.counter0 }}">{{ movie.title }}</a><br>
+{#            {{ forloop.counter | add: 5}}위: <a href="/movie/{{ forloop.counter0 }}">{{ movie.title }}</a><br>#}
+{#               순위인수에 더해주고 싶을 때 위와 같은 코드 사용#}
+    {%  endif %}
+    {%  endfor %}
 </body>
 </html>

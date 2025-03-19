@@ -76,8 +76,9 @@ def movie_detail(request, index):
         raise Http404
 
     movie = movie_list[index]
-    context = {'movie': movie}
-    return render(request, 'movie.html', context)
+    # context = {'movie': movie}
+    # return render(request, 'movie.html', context)
+    return render(request, 'movie.html', {'movie': movie})
 
 def gugu(request, num):
     context = {
@@ -99,5 +100,5 @@ urlpatterns = [
 #     path('movie/<int:index>/', movie_detail),
 #     path('gugu/<int:num>/', gugu),
     path('bookmark/', views.bookmark_list),
-    path('bookmark/<int:number>/', views.bookmark_detail),
+    path('bookmark/<int:pk>/', views.bookmark_detail),
 ]
